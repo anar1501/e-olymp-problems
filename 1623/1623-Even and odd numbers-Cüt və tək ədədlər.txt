@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+    unsigned int a,b,c;
+    scanf("%u %u %u",&a,&b,&c);
+    if((a%2==0&&b%2==0&&c%2==0)||(a%2==1&&b%2==1&&c%2==1))
+        {
+            printf("NO");
+        }
+        else{
+            printf("YES");
+        }
+
+    return 0;
+}

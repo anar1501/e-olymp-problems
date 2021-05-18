@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+long int areaOfRectangle(long int a,long int b);
+int main()
+{
+long int a,b;
+    scanf("%ld %ld",&a,&b);
+    printf("%ld",areaOfRectangle(a,b));
+
+    return 0;
+}
+long int areaOfRectangle(long int a,long int b)
+{
+    return a*b;
+}

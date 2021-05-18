@@ -1,0 +1,16 @@
+#include stdio.h
+#include stdlib.h
+
+int main()
+{
+   int d,b,c;
+   scanf(%d %d %d,&d,&b,&c);
+   int all_empty=d+b;
+   int drinked=0;
+   while(all_empty=c){
+    drinked+=all_emptyc;
+    all_empty=all_emptyc+all_empty%c;
+   }
+   printf(%d,drinked);
+    return 0;
+}

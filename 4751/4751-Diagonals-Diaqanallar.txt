@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+int n;
+    scanf("%d",&n);
+    int massiv[n][n];
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            scanf("%d",&massiv[i][j]);
+        }
+    }
+    int dio1=0;
+    int dio2=0;
+    for(int i=0;i<n;i++){
+        for(int j=0;j<n;j++){
+            if(i==j){
+                dio1+=massiv[i][j];
+            }
+            if(i+j==n-1){
+               dio2+=massiv[i][j];
+            }
+        }
+    }
+    printf("%d %d",dio1,dio2);
+
+    return 0;
+}

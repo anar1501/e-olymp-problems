@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
+int main()
+{
+    char str[1000][25];
+    int i=0;
+    while(scanf("%s",str[i])!=EOF){
+            i++;
+    }
+    for(int j=0;j<i;j++){
+    printf("%d ",strlen(str[j]));
+    }
+         return 0;
+}

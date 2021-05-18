@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+
+int main()
+{   int n, min ,m , x;
+    scanf("%d" , &n);
+    scanf("%d" , &m);
+    min=m;
+for(int i=1;i<n;i++){
+    scanf("%d" , &x);
+if(x<min){
+        min=x;
+    }
+}
+    printf("%d" ,min);
+
+    return 0;
+}

@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main()
+{
+    int n;
+   scanf("%d",&n);
+   int massiv[n];
+   int count=0;
+   for(int i=0;i<n;i++){
+    scanf("%d",&massiv[i]);
+   }
+   for(int i=0;i<n-1;i++){
+    for(int j=0;j<n-1-i;j++){
+        if(massiv[j]>massiv[j+1]){
+            int temp=massiv[j];
+            massiv[j]=massiv[j+1];
+            massiv[j+1]=temp;
+            count++;
+        }
+    }
+   }
+   printf("%d",count);
+
+    return 0;
+}

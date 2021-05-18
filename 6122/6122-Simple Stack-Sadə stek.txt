@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#define Size 110
+int Stack[Size];
+int index_of_element=0;
+void push(int n);
+int pop();
+int back();
+int size();
+void clear();
+int main()
+{
+    char op[10];
+    while(scanf("%s",op)!=EOF){
+    if(strcmp(op,"push")==0){
+        int n;
+        scanf("%d",&n);
+        push(n);
+        printf("ok\n");
+    }
+    else if(strcmp(op,"pop")==0){
+            printf("%d\n",pop());
+    }
+
+    else if(strcmp(op,"back")==0){
+            printf("%d\n",back());
+    }
+    else if(strcmp(op,"size")==0){
+            printf("%d\n",size());
+    }
+    else if(strcmp(op,"clear")==0){
+            clear();
+             printf("ok\n");
+    }
+    else if(strcmp(op,"exit")==0)
+        {
+            printf("bye\n");
+            exit(0);
+        }
+    }
+
+return 0;
+}
+void push(int n)
+{
+Stack[index_of_element++]=n;
+}
+int pop()
+{
+  return Stack[--index_of_element];
+}
+int back()
+{
+    return Stack[index_of_element-1];
+}
+
+int size()
+{
+    return index_of_element;
+}
+void clear()
+{
+    index_of_element=0;
+}

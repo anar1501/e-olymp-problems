@@ -1,0 +1,71 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#define Size 100000
+int Stack[Size];
+int start_index_of_element=0;
+int finish_index_of_element=0;
+void push(int n);
+int pop();
+int front();
+int size();
+bool is_empty();
+void clear();
+int main()
+{
+    char op[10];
+    while(scanf("%s",op)!=EOF){
+        if(strcmp(op,"push")==0){
+            int n;
+            scanf("%d",&n);
+            push(n);
+            printf("ok\n");
+        }
+        else if(strcmp(op,"size")==0){
+            printf("%d\n",size());
+        }
+        else if(strcmp(op,"pop")==0){
+           printf("%d\n",pop());
+        }
+         else if(strcmp(op,"front")==0){
+           printf("%d\n",front());
+        }
+        else if(strcmp(op,"exit")==0){
+            printf("bye\n");
+            exit(0);
+        }
+        else if(strcmp(op,"clear")==0){
+            while(!is_empty()){
+            pop();
+    }
+             printf("ok\n");
+    }
+    }
+
+
+
+return 0;
+}
+void push(int n)
+{
+    Stack[finish_index_of_element]=n;
+    finish_index_of_element++;
+}
+int pop(){
+    int a=Stack[start_index_of_element];
+    start_index_of_element++;
+    return a;
+}
+int front()
+{
+    return Stack[start_index_of_element];
+}
+int size()
+{
+    return finish_index_of_element-start_index_of_element;
+}
+bool is_empty()
+{
+    return size()==0;
+}

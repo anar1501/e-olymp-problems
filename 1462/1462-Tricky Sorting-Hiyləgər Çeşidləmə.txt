@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    scanf("%d",&n);
+    short int massiv[n];
+    int temp;
+    for(int i=0;i<n;i++){
+        scanf("%hd",&massiv[i]);
+    }
+    for(int i=0;i<n-1;i++){
+        for(int j=0;j<n-1-i;j++){
+            if((massiv[j]%10>massiv[j+1]%10)||(massiv[j]%10==massiv[j+1]%10&&massiv[j]>massiv[j+1])){
+             temp=massiv[j+1];
+             massiv[j+1]=massiv[j];
+             massiv[j]=temp;
+            }
+
+        }
+    }
+    for(int i=0;i<n;i++)printf("%hd ",massiv[i]);
+
+
+    return 0;
+}

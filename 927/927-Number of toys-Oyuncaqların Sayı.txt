@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+int nagd_oyuncag;
+scanf("%d",&nagd_oyuncag);
+int oyuncaq_say;
+double oyuncaq_qiymet;
+int less=0;
+for(int i=1;i<=nagd_oyuncag;i++)
+{
+    scanf("%d",&oyuncaq_say);
+    scanf("%lf",&oyuncaq_qiymet);
+    if(oyuncaq_qiymet<50.0)
+        {
+            less=less+oyuncaq_say;
+        }
+
+}
+printf("%d",less);
+    return 0;
+}

@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
+bool number_palindrom(char number[]);
+int main()
+{
+    char number[11];
+    scanf("%s", number);
+    number_palindrom(number) ? printf("Yes") : printf("No");
+
+     return 0;
+}
+bool number_palindrom(char number[]) {
+    int length = strlen(number);
+    for (int i = 0; i < length/2; i++) {
+        if (number[i] != number[length - 1 - i]) {
+            return false;
+        }
+    }
+    return true;
+}

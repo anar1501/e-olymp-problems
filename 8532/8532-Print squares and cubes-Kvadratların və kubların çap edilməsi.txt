@@ -1,0 +1,15 @@
+#include<stdio.h>
+int main()
+{
+long int n,m;
+scanf("%ld %ld",&n,&m);
+for(long int i =n;i<=m;i++)
+{
+printf("%ld ",i*i);
+}
+printf("\n");
+for(long int j=m;j>=n;j--){
+printf("%ld ",j*j*j);
+}
+return 0;
+}

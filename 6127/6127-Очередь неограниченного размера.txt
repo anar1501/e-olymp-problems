@@ -1,0 +1,85 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdbool.h>
+#include <stdlib.h>
+#define Size 1000000
+long int Queue[Size];
+long int front=0;
+long int rear=0;
+void enqueue(long int n);
+long int dequeue();
+long int peek();
+long int size();
+bool is_empty();
+bool is_full();
+int main()
+{
+    char op[10];
+    while(scanf("%s",op)!=EOF){
+        if(strcmp(op,"push")==0){
+            long int n;
+            scanf("%ld",&n);
+            enqueue(n);
+            printf("ok\n");
+        }
+        else if(strcmp(op,"size")==0){
+            printf("%ld\n",size());
+        }
+        else if(strcmp(op,"pop")==0){
+                if(is_empty()){
+                    printf("error\n");
+                }
+                else{
+                    printf("%ld\n",dequeue());
+                }
+        }
+         else if(strcmp(op,"front")==0){
+                if(is_empty()){
+                    printf("error\n");
+                }
+                else{
+                    printf("%ld\n",peek());
+                }
+        }
+        else if(strcmp(op,"exit")==0){
+            printf("bye\n");
+            exit(0);
+        }
+        else if(strcmp(op,"clear")==0){
+            while(!is_empty()){
+            dequeue();
+            }
+            printf("ok\n");
+        }
+    }
+
+
+
+return 0;
+}
+void enqueue(long int n)
+{
+    Queue[rear]=n;
+    rear++;
+}
+long int dequeue()
+{
+   return Queue[front++];
+
+}
+long int peek()
+{
+    return Queue[front];
+}
+long int size()
+{
+    return rear-front;
+}
+bool is_empty()
+{
+    return size()==0;
+}
+bool is_full()
+{
+    return size()==Size;
+}

@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+int n,count=0;
+    scanf("%d",&n);
+    int cake=0;
+    double m;
+    for(int i=0;i<n;i++){
+        scanf("%lf ",&m);
+        if(m<30.0){
+            cake=++;
+        }
+    }
+    int milk=cake*200;
+    int bootle=milk/900;
+    if(milk%900!=0){
+        bottle++;
+    }
+    printf("%d %d",bottle,cake);
+    return 0;
+}

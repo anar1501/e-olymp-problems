@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <time.h>
+#include <stdio.h>
+
+double firstMaxFinder(double a, double b);
+double secondMaxFinder(double b, double c);
+double summer(double a, double b, double c);
+
+double min(double a,double b, double c);
+
+
+int main(){
+    double x,y,z,firstMax, secondMax, sum,result;
+
+    scanf("%lf %lf %lf",&x,&y,&z);
+
+    firstMax=firstMaxFinder(x,y);
+    secondMax=secondMaxFinder(y,z);
+    sum=summer(x,y,z);
+    result=min(firstMax,secondMax,sum);
+
+    printf("%.2lf",result);
+
+return 0;
+}
+
+double firstMaxFinder(double a, double b){
+    double y=a>= b? a:b;
+    return y;
+}
+double secondMaxFinder(double b, double c){
+    double y=b>=c ? b:c;
+    return y;
+}
+double summer(double a, double b, double c){
+    double y=a+b+c;
+    return y;
+}
+double min(double a,double b, double c){
+    double y;
+    if(a<=b && a<=c){return a;}
+    else if(b<=a && b<=c){return b;}
+    else{return c;}
+}

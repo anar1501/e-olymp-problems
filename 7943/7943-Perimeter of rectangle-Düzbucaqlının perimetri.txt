@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+short int perimetrOfRectangle(short int a,short int b);
+int main()
+{
+    short int a,b;
+    scanf("%hd %hd",&a,&b);
+    printf("%hd",perimetrOfRectangle(a,b));
+
+    return 0;
+}
+short int perimetrOfRectangle(short int a,short int b)
+{
+    return (a+b)*2;
+}

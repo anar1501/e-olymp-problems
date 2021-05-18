@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main()
+{
+     long long int n;
+    scanf("%lld",&n);
+    long long int temp;
+    if(n<0){
+        n=n*(-1);
+    }
+    for(long long int i=n;i!=0;i/=10){
+        temp=i%10;
+    }
+    printf("%lld",temp);
+    
+    return 0;
+}

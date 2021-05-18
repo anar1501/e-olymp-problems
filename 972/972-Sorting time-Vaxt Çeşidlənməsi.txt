@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+typedef struct Time {
+    int hour;
+    int minute;
+    int second;
+} time;
+void time_sort(time *t, int n);
+bool time_cmp(time *t1, time *t2);
+void time_swap(time *t1, time *t2);
+int main() {
+
+    int n;
+    scanf("%d", &n);
+    time *t;
+    t = (time*) malloc(n*sizeof(time));
+
+    for (int i = 0; i < n; i++) {
+        scanf("%d %d %d", &(t+i)->hour, &(t+i)->minute, &(t+i)->second);
+    }
+
+    time_sort(t, n);
+
+    for (int i = 0; i < n; i++) {
+        printf("%d %d %d\n", (t+i)->hour, (t+i)->minute, (t+i)->second);
+    }
+
+    return 0;
+}
+void time_sort(time *t, int n) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - 1 - i; j++) {
+            if (time_cmp(t+j, t+j+1)) {
+                time_swap(t+j, t+j+1);
+            }
+        }
+    }
+}
+bool time_cmp(time *t1, time *t2) {
+    int t1_sec = t1->hour*60*60 + t1->minute*60 + t1->second;
+    int t2_sec = t2->hour*60*60 + t2->minute*60 + t2->second;
+    return t1_sec > t2_sec;
+}
+void time_swap(time *t1, time *t2) {
+    time temp = *t1;
+    *t1 = *t2;
+    *t2 = temp;
+}
